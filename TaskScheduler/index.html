@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel='stylesheet' href='style.css'>
+</head>
+<body>
+
+<h1>Task Scheduler</h1>
+
+<div class="month">      
+  <ul>
+    
+    <li>
+      Whole Month<br>
+      <span style="font-size:18px">2021</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li >Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>Su</li>
+</ul>
+
+<ul class="days">  
+  <li id="DAY-00">1</li>
+  <li id="DAY-01">2</li>
+  <li id="DAY-02">3</li>
+  <li id="DAY-03">4</li>
+  <li id="DAY-04">5</li>
+  <li id="DAY-05">6</li>
+  <li id="DAY-06">7</li>
+  <li id="DAY-07">8</li>
+  <li id="DAY-08">9</li>
+  <li id="DAY-09">10</li>
+  <li id="DAY-10">11</li>
+  <li id="DAY-11">12</li>
+  <li id="DAY-12">13</li>
+  <li id="DAY-13">14</li>
+  <li id="DAY-14">15</li>
+  <li id="DAY-15">16</li>
+  <li id="DAY-16">17</li>
+  <li id="DAY-17">18</li>
+  <li id="DAY-18">19</li>
+  <li id="DAY-19">20</li>
+  <li id="DAY-20">21</li>
+  <li id="DAY-21">22</li>
+  <li id="DAY-22">23</li>
+  <li id="DAY-23">24</li>
+  <li id="DAY-24">25</li>
+  <li id="DAY-25">26</li>
+  <li id="DAY-26">27</li>
+  <li id="DAY-27">28</li>
+  <li id="DAY-28">29</li>
+  <li id="DAY-29">30</li>
+  <li id="DAY-30">31</li>
+</ul>
+
+<button onclick="generateSchedule();" >Check Available Dates</button><br><br>
+<button onclick="location.reload(true);">Reload Page</button><br><br>
+
+<button id="myBtn"> Schedule a Task</button><br><br>
+
+<form action="#">
+<div id="myModal" class="modal">
+
+
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1>Enter Details</h1>
+    <form action="/">
+    <label >Title :</label>
+  <select required="required">
+    <option >Mr</option>
+    <option >Mrs</option>
+    <option >Miss</option>
+    <option >Ms</option>
+  </select><br><br>
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname" minlength="2" maxlength="30" required="required"><br><br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname" minlength="2" maxlength="30" required="required"><br><br>
+  <label for="birthday">Birthday:</label>
+  <input type="date" id="birthday" name="birthday" min="1990-01-01" max="2005-01-01" required="required"><br><br>
+  <label >Exam ID :</label>
+  <select required="required">
+    <option >Physics 212</option>
+    <option >Biology 213</option>
+    <option >Chemistry 214</option>
+    <option >English 215</option>
+  </select><br><br>
+  <label for="examDate">Exam Date</label>
+  <input type="date" id="Exam_Date" name="Exam Date" min="2021-04-01" max="2021-05-01" required="required"><br><br>
+  
+  
+  <input type="submit" value="Submit" style="  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;">
+  </div>
+
+</div>
+
+<form>
+
+<script>
+	function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+const EXAMS_PER_DAY = 2;
+const TOTAL_EXAMS = 5; 
+
+var exam_days = 
+    { 0: 0, 
+      1: 0, 
+      2: 0, 
+      3: 0, 
+      4: 0, 
+      5: 0 };
+
+var exam_array = []; 
+
+function generateSchedule() {
+  for (var i = 0; exam_array.length < TOTAL_EXAMS; i++){
+    var time = getRandomInt(0,2);
+    var day = getRandomInt(0,10);
+    var exam_id = "exam-" + time + day; 
+    if (exam_days[day] < EXAMS_PER_DAY && !exam_array.includes(exam_id)) {
+      exam_array.push(exam_id);
+      exam_days[day] += 1;
+      document.getElementById(exam_id).style.background = "Yellow"; 
+      
+    }
+  }  
+}
+
+
+
+
+var modal = document.getElementById("myModal");
+
+var btn = document.getElementById("myBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+</body>
+</html>
