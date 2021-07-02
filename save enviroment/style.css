@@ -1,0 +1,71 @@
+body {
+    background-color: white;
+}
+
+#header {
+    font-size: 90px;
+    font-family: serif;
+    font-weight: 300;
+    color: aquamarine;
+}
+
+#sun {
+    font-size: 25px;
+    background-color: black;
+    color: white;
+}
+
+.home {
+    text-align: center
+}
+
+#header {
+    margin-left: 300px;
+    margin-bottom: 200px;
+    margin-top: 100px;
+    font-size: 80px;
+}
+
+#news1 {
+    color: gray;
+    text-align: left;
+}
+
+#newspic {
+    width: 450px;
+    text-align: left;
+}
+
+#news1p {
+    font-size: 15px;
+    text-align: left;
+}
+
+#news2 {
+    color: grey;
+    text-align: right;
+}
+
+#newspic2 {
+    width: 450px;
+    height: 370px;
+    margin-left: 600px;
+}
+
+#news2p {
+    font-size: 15px;
+    text-align: right;
+
+}
+
+.hth {
+    color: grey;
+}
+
+#hth1 {
+    color: black;
+}
+
+.hthp {
+    color: black;
+}
