@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>ADMIN DASHBOARD</h1>
+    </header>
+    <form id="add-user-form">
+        <input type="text" id="new-user-name" placeholder="Name" required>
+        <input type="email" id="new-user-email" placeholder="Email" required>
+        <input type="text" id="new-user-role" placeholder="Role" required>
+        <button type="submit">Add User</button>
+    </form>
+    <input type="text" id="search-box" placeholder="Search..." class="search-box">
+    
+    <table id="user-table">
+        <thead>
+            <tr>
+                <th><input type="checkbox" id="select-all"></th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+    
+    <div id="pagination">
+        <!-- for Pagination -->
+    </div>
+
+    <button id="delete-selected" class="delete-selected">Delete Selected</button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

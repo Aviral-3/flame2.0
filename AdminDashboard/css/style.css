@@ -1,0 +1,72 @@
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+
+.search-box {
+    padding: 10px;
+    margin: 10px 0;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+.selected {
+    background-color: #e0e0e0;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+
+#pagination {
+    margin-top: 10px;
+}
+
+.first-page, .previous-page, .next-page, .last-page, .page-btn {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.page-btn.current {
+    font-weight: bold;
+    background-color: #dcdcdc;
+}
+
+.edit, .delete {
+    margin-right: 5px;
+}
+
+
+.editing {
+    display: none;
+}
+
+
+.edit-mode .editing {
+    display: inline;
+}
+
+.edit-mode .non-editing {
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
